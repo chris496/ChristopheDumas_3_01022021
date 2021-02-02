@@ -1,0 +1,19 @@
+{
+  "name": "christophedumas_3_01022021",
+  "version": "1.0.0",
+  "description": "ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris496/ChristopheDumas_3_01022021.git"
+  },
+  "author": "moi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris496/ChristopheDumas_3_01022021/issues"
+  },
+  "homepage": "https://github.com/chris496/ChristopheDumas_3_01022021#readme"
+}
