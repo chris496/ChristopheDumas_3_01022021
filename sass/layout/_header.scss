@@ -1,0 +1,14 @@
+header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 8px -8px black;
+    height: 5rem;
+
+    .arrow{
+        position: absolute;
+        left: 2rem;
+    }
+}
+

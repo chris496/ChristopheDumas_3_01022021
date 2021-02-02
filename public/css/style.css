@@ -1,0 +1,64 @@
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 8px -8px black;
+  height: 5rem;
+}
+header .arrow {
+  position: absolute;
+  left: 2rem;
+}
+
+footer {
+  background-color: #292929;
+  text-align: left;
+  padding: 1rem 0 1rem 3rem;
+}
+footer h4 {
+  color: white;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+footer ul i {
+  font-size: 1.3rem;
+}
+footer ul a {
+  color: white;
+}
+
+html {
+  font-size: 62.5%;
+  /* =10px */
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "roboto", sans-serif;
+}
+
+h1 {
+  font-family: "shrikhand", sans-serif;
+}
+
+h4 {
+  font-family: "shrikhand", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
