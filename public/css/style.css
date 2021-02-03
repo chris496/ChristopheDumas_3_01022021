@@ -61,4 +61,122 @@ a {
   color: black;
 }
 
+.location {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #e7e5ee;
+}
+.location__icone {
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6f6f8;
+}
+.presentation__title {
+  margin: 4rem 7rem 0rem 7rem;
+  text-align: center;
+}
+.presentation__text {
+  text-align: center;
+  margin: 1rem 4rem 3rem 4rem;
+}
+.presentation__button {
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  font-size: 1.5rem;
+  padding: 2rem 2.5rem;
+  border-radius: 5rem;
+  border: none;
+  box-shadow: 0rem 0.3rem 1.5rem #818181;
+  margin-bottom: 3rem;
+}
+
+.operation__title {
+  margin: 4rem 0 3rem 2rem;
+}
+.operation__button {
+  position: relative;
+  background-color: #f6f6f8;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3.5rem 2rem 3.5rem;
+  padding: 3rem 4rem;
+  border-radius: 2.5rem;
+  box-shadow: 0.3rem 0.3rem 0.5rem #818181;
+  text-decoration: none;
+}
+.operation__button__logo {
+  position: absolute;
+  left: 4rem;
+  font-size: 2rem;
+  color: gray;
+}
+.operation__button__number {
+  position: absolute;
+  left: -1.2rem;
+  background-color: #9356DC;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.restaurants {
+  background-color: #f6f6f8;
+  margin-top: 7rem;
+}
+.restaurants__title {
+  padding: 4rem 0 0 2rem;
+}
+.restaurants__card {
+  position: relative;
+  margin: 2rem auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem #818181;
+}
+.restaurants__card img {
+  width: 100%;
+  height: 20rem;
+  border-radius: 1rem 1rem 0 0;
+  object-fit: cover;
+  object-position: 0 -5rem;
+}
+.restaurants__card__new {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  background-color: #99E2D0;
+  color: black;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.1rem;
+}
+.restaurants__card__text {
+  position: relative;
+}
+.restaurants__card__text h3 {
+  margin: 1.5rem 0 0 1rem;
+}
+.restaurants__card__text p {
+  margin: 0 0 1.5rem 1rem;
+}
+.restaurants__card__text__heart {
+  position: absolute;
+  font-size: 2rem;
+  right: 2rem;
+  top: 2rem;
+}
+
 /*# sourceMappingURL=style.css.map */

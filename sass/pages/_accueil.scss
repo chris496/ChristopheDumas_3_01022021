@@ -1,0 +1,82 @@
+.location{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(231, 229, 238);
+    &__icone{
+        display: flex;
+        justify-self: flex-start;
+        align-items: center;
+    }
+}
+
+.presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $background-light;
+    &__title{
+        margin: 4rem 7rem 0rem 7rem;
+        text-align: center;
+    }
+    &__text{
+        text-align: center;
+        margin: 1rem 4rem 3rem 4rem;
+    }
+    &__button{
+        @include command-button;
+        margin-bottom: 3rem;
+    }
+}
+
+.operation{
+    &__title{
+        margin: 4rem 0 3rem 2rem;
+    }
+    @include operation-button;
+}
+
+.restaurants{
+    background-color: $background-light;
+    margin-top: 7rem;
+    &__title{
+        padding: 4rem 0 0 2rem;
+    }
+    &__card{
+        position: relative;
+        margin: 2rem auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem;
+        box-shadow: 0.2rem 0.2rem 0.5rem $color-shadow;
+        img{
+            width: 100%;
+            height: 20rem;
+            border-radius: 1rem 1rem 0 0;
+            object-fit: cover;
+            object-position: 0 -5rem;
+        }
+        &__new{
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+            @include new-button;
+        }
+        &__text{
+            position: relative;
+            h3{
+                margin: 1.5rem 0 0 1rem;
+            }
+            p{
+                margin: 0 0 1.5rem 1rem;
+            }
+            &__heart{
+                position: absolute;
+                font-size: 2rem;
+                right: 2rem;
+                top: 2rem;
+            }
+        }
+    }
+}
