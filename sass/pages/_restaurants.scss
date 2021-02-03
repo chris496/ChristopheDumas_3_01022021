@@ -1,0 +1,72 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-menu{
+    margin-bottom: -5rem;
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.menu{
+    background-color: $background-light;
+    border-radius: 2.5rem;
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            margin-left: 1.5rem;
+        }
+        &__heart{
+            margin-right: 3.5rem;
+            font-size: 2.5rem;
+        }
+    }
+    &__detail{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h2{
+        font-weight: 300;
+        align-self: flex-start;
+        margin: 2rem 0 0 1.5rem;
+    }
+    &__line{
+        width: 6rem;
+        height: 0.5rem;
+        background-color: $color-tertiary;
+        align-self: flex-start;
+        margin: 0 0 1rem 1.5rem;
+    }
+    &__plat{
+        position: relative;
+        background-color: white;
+        border-radius: 1.5rem;
+        box-shadow: 0.3rem 0.3rem 0.5rem $color-shadow;
+        width: 90%;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        h3{
+            margin: 0;
+        }
+        p{
+            margin: 0;
+        }
+        &__price{
+            position: absolute;
+            right: 2rem;
+            bottom: 1rem;
+        }
+    }
+    &__command-button{
+        margin: 4rem auto 8rem auto;
+        display: block;
+        @include command-button;
+        padding: 2rem 5rem;
+    }
+}
