@@ -1,3 +1,12 @@
+@keyframes animation-menu {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 100;
+  }
+}
 header {
   position: relative;
   display: flex;
@@ -208,6 +217,9 @@ main {
   margin-right: 3.5rem;
   font-size: 2.5rem;
 }
+.menu__title i {
+  font-weight: 900;
+}
 .menu__detail {
   display: flex;
   flex-direction: column;
@@ -226,24 +238,89 @@ main {
   margin: 0 0 1rem 1.5rem;
 }
 .menu__plat {
-  position: relative;
+  opacity: 0;
+  display: flex;
+  width: 85%;
   background-color: white;
   border-radius: 1.5rem;
   box-shadow: 0.3rem 0.3rem 0.5rem #818181;
-  width: 90%;
   margin-bottom: 1rem;
   padding: 1rem;
+  /*.anim{
+      background-color: blue;
+      margin: -1rem -1rem -1rem .1rem;
+      border-radius: 0 1.5rem 1.5rem 0;
+      width: 8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .check{
+      background-color: brown;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: .5rem;
+      border-radius: 2.5rem;
+      i{
+          font-size: 1.5rem;
+      }
+  }*/
+}
+.menu__plat__title {
+  overflow: hidden;
+  white-space: nowrap;
 }
 .menu__plat h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 1rem 5rem 0 1rem;
   margin: 0;
 }
 .menu__plat p {
-  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0 3rem 0rem 1rem;
 }
 .menu__plat__price {
-  position: absolute;
-  right: 2rem;
-  bottom: 1rem;
+  display: flex;
+  align-items: flex-end;
+}
+.menu__plat:nth-child(3) {
+  animation: animation-menu 1s forwards;
+}
+.menu__plat:nth-child(4) {
+  animation: animation-menu 1s forwards;
+  animation-delay: 200ms;
+}
+.menu__plat:nth-child(5) {
+  animation: animation-menu 1s forwards;
+  animation-delay: 400ms;
+}
+.menu__plat:nth-child(8) {
+  animation: animation-menu 1s forwards;
+}
+.menu__plat:nth-child(9) {
+  animation: animation-menu 1s forwards;
+  animation-delay: 200ms;
+}
+.menu__plat:nth-child(10) {
+  animation: animation-menu 1s forwards;
+  animation-delay: 400ms;
+}
+.menu__plat:nth-child(13) {
+  animation: animation-menu 1s forwards;
+}
+.menu__plat:nth-child(14) {
+  animation: animation-menu 1s forwards;
+  animation-delay: 200ms;
+}
+.menu__plat:nth-child(15) {
+  animation: animation-menu 1s forwards;
+  animation-delay: 400ms;
 }
 .menu__command-button {
   margin: 4rem auto 8rem auto;
@@ -257,5 +334,11 @@ main {
   box-shadow: 0rem 0.3rem 1.5rem #818181;
   padding: 2rem 5rem;
 }
+
+/*.test{
+    background-color: brown;
+    width: 1px;
+    border-radius: 0 1.5rem 1.5rem 0;
+}*/
 
 /*# sourceMappingURL=style.css.map */
