@@ -106,6 +106,17 @@ footer ul a {
   color: white;
 }
 
+@media (min-width: 769px) {
+  footer {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer ul {
+    text-align: center;
+  }
+}
 html {
   font-size: 62.5%;
   /* =10px */
@@ -269,18 +280,20 @@ a {
   content: "";
 }
 
-/*.anim-spinner{
-    font-size: 3rem;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(139, 187, 175, 0.897);
-    z-index: 1;
+.anim-spinner {
+  display: none;
+  /*font-size: 3rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(139, 187, 175, 0.897);
+  z-index: 1;*/
 }
-.anim-spinner{
+
+/*.anim-spinner{
     :nth-child(1){
         animation: loading-spinner-translateY 2s linear, loading-spinner-scale 1s 2s, loading-spinner-color 2s 2s;
     }
@@ -307,6 +320,60 @@ a {
     }
 }*/
 /* MEDIA QUERIES */
+@media (min-width: 1025px) {
+  .operation__title {
+    text-align: center;
+  }
+  .operation a {
+    width: 20%;
+  }
+  .operation__bloc {
+    display: flex;
+    justify-content: space-around;
+  }
+  .operation__button {
+    margin: 0;
+  }
+  .operation__button__logo {
+    left: 3rem;
+  }
+
+  .restaurants__title {
+    text-align: center;
+  }
+  .restaurants a {
+    width: 50%;
+  }
+  .restaurants__bloc {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1440px) {
+  .operation__title {
+    text-align: center;
+  }
+  .operation__bloc {
+    display: flex;
+    justify-content: space-around;
+  }
+  .operation__button {
+    margin: 0;
+  }
+
+  .restaurants__title {
+    text-align: center;
+  }
+  .restaurants a {
+    width: 25%;
+  }
+  .restaurants__bloc {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
 main {
   display: flex;
   flex-direction: column;

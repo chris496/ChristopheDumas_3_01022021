@@ -19,3 +19,15 @@ footer{
         }        
         }
 }
+
+@media(min-width:769px){
+    footer{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        ul{
+            text-align: center;
+        }
+    }
+}

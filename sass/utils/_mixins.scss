@@ -29,6 +29,12 @@
     }
 }
 
+@mixin operation-button-queries-desktop{
+    &__button{
+        width: 100%;
+    }
+}
+
 @mixin command-button {
     background: linear-gradient($color-secondary, $color-primary);
     color: white;
