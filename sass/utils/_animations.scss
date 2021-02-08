@@ -1,0 +1,60 @@
+/* animation cascade menu pages restaurants */
+
+@keyframes animation-menu{
+    0%{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 100;
+    }
+}
+
+
+/* Animation loading spinner page d'accueil */
+
+@keyframes loading-spinner-translateY{
+    0%{
+        transform: translateY(-600px);
+        opacity: 0;
+
+    }
+
+    65%{
+        transform: translateY(0px);
+    }
+
+    75%{
+        transform: translateY(-60px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes loading-spinner-scale{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.5);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes loading-spinner-color {
+    0%       { color: #9356DC; }
+    10%      { color: #FF79DA; }
+    20%      { color: #99E2D0; }
+    30%      { color: #9356DC; }
+    40%      { color: #FF79DA; }
+    50%      { color: #99E2D0; }
+    60%      { color: #9356DC; }
+    70%      { color: #FF79DA; }
+    80%      { color: #99E2D0; }
+    90%      { color: #9356DC; }
+}
