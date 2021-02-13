@@ -13,6 +13,8 @@
 
 /* Animation loading spinner page d'accueil */
 
+
+
 @keyframes loading-spinner-translateY{
     0%{
         transform: translateY(-600px);
@@ -47,14 +49,27 @@
 }
 
 @keyframes loading-spinner-color {
-    0%       { color: #9356DC; }
-    10%      { color: #FF79DA; }
-    20%      { color: #99E2D0; }
-    30%      { color: #9356DC; }
-    40%      { color: #FF79DA; }
-    50%      { color: #99E2D0; }
-    60%      { color: #9356DC; }
-    70%      { color: #FF79DA; }
-    80%      { color: #99E2D0; }
-    90%      { color: #9356DC; }
+    0%       {color: $color-primary;}
+    10%      {color: $color-secondary;}
+    20%      {color: $color-tertiary;}
+    30%      {color: $color-primary;}
+    40%      {color: $color-secondary;}
+    50%      {color: $color-tertiary;}
+    60%      {color: $color-primary;}
+    70%      {color: $color-secondary;}
+    80%      {color: $color-tertiary;}
+    90%      {color: $color-primary;}
+}
+
+@keyframes test{
+    0%{
+        transform: scaleX(0);
+        transform-origin: 100%;   
+    }
+   
+
+    100%{
+        transform: scaleX(1);
+        transform-origin: 100%;
+    }
 }

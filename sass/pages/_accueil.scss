@@ -26,6 +26,10 @@
     &__button{
         @include command-button;
         margin-bottom: 3rem;
+        &:hover{
+            cursor: pointer;
+            @include command-button-light;
+        }
     }
 }
 
@@ -34,6 +38,13 @@
         margin: 4rem 0 3rem 2rem;
     }
     @include operation-button;
+}
+
+.operation__button:hover{
+    background-color: #e62cb42a;
+}
+.operation__button:hover .operation__button__logo{
+    color: $color-primary;
 }
 
 .restaurants{
@@ -52,7 +63,7 @@
         box-shadow: 0.2rem 0.2rem 0.5rem $color-shadow;
         img{
             width: 100%;
-            height: 20rem;
+            height: 16rem;
             border-radius: 1rem 1rem 0 0;
             object-fit: cover;
             object-position: 0 -5rem;
@@ -80,15 +91,19 @@
         /* animation coeur */
                 &:hover{
                     &::after{
+                        -webkit-transform: scale(1);
                         transform: scale(1);
                     }  
                 }
                 &::after{
                     position: absolute;
                     left: 0;
+                    -webkit-transform: scale(0);
                     transform: scale(0);
+                    -webkit-transition: transform 1.5s;
                     transition: transform 1.5s;
                     background: linear-gradient(#9356DC, #FF79DA);
+                    -webkit-background-clip: text;
                     background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-family: "Font awesome 5 Free";
@@ -103,19 +118,24 @@
     }
 }
 
+        /* animation loading-spinner page d'accueil */
+
 .anim-spinner{
-    display: none;
-    /*font-size: 3rem;
+    
+    
+    visibility: hidden;
+    font-size: 3rem;
     position: absolute;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(139, 187, 175, 0.897);
-    z-index: 1;*/
-}
-/*.anim-spinner{
+    background-color: rgb(223, 189, 224, 0.9);
+    z-index: 1;
+    
+
+
     :nth-child(1){
         animation: loading-spinner-translateY 2s linear, loading-spinner-scale 1s 2s, loading-spinner-color 2s 2s;
     }
@@ -140,7 +160,8 @@
     :nth-child(8){
         animation: loading-spinner-translateY 2s 1.4s linear, loading-spinner-scale 1s 3.4s, loading-spinner-color 2s 3.4s;
     }
-}*/
+}
+
 
                             /* MEDIA QUERIES */
 

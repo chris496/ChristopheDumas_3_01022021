@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* bouton nouveau sur carte restaurant */
 /* animation cascade menu pages restaurants */
 @keyframes animation-menu {
   0% {
@@ -38,34 +39,44 @@
 }
 @keyframes loading-spinner-color {
   0% {
-    color: #9356DC;
+    color: #9256dc;
   }
   10% {
-    color: #FF79DA;
+    color: #ff7ad9;
   }
   20% {
-    color: #99E2D0;
+    color: #98e2cf;
   }
   30% {
-    color: #9356DC;
+    color: #9256dc;
   }
   40% {
-    color: #FF79DA;
+    color: #ff7ad9;
   }
   50% {
-    color: #99E2D0;
+    color: #98e2cf;
   }
   60% {
-    color: #9356DC;
+    color: #9256dc;
   }
   70% {
-    color: #FF79DA;
+    color: #ff7ad9;
   }
   80% {
-    color: #99E2D0;
+    color: #98e2cf;
   }
   90% {
-    color: #9356DC;
+    color: #9256dc;
+  }
+}
+@keyframes test {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 100%;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 100%;
   }
 }
 header {
@@ -81,6 +92,7 @@ header .arrow {
   left: 2rem;
 }
 
+/* Pour page d'accueil */
 .arrow-header {
   display: none;
 }
@@ -106,6 +118,7 @@ footer ul a {
   color: white;
 }
 
+/* MEDIA QUERIES */
 @media (min-width: 769px) {
   footer {
     padding: 0;
@@ -173,14 +186,19 @@ a {
   margin: 1rem 4rem 3rem 4rem;
 }
 .presentation__button {
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(#ff7ad9, #9256dc);
   color: white;
   font-size: 1.5rem;
   padding: 2rem 2.5rem;
   border-radius: 5rem;
   border: none;
-  box-shadow: 0rem 0.3rem 1.5rem #818181;
+  box-shadow: 0rem 0.3rem 1.5rem gray;
   margin-bottom: 3rem;
+}
+.presentation__button:hover {
+  cursor: pointer;
+  background: linear-gradient(#ff88dd, #9d67e0);
+  box-shadow: 0rem 0.3rem 1.5rem #666666;
 }
 
 .operation__title {
@@ -196,7 +214,7 @@ a {
   margin: 0 3.5rem 2rem 3.5rem;
   padding: 3rem 4rem;
   border-radius: 2.5rem;
-  box-shadow: 0.3rem 0.3rem 0.5rem #818181;
+  box-shadow: 0.3rem 0.3rem 0.5rem gray;
   text-decoration: none;
 }
 .operation__button__logo {
@@ -208,11 +226,19 @@ a {
 .operation__button__number {
   position: absolute;
   left: -1.2rem;
-  background-color: #9356DC;
+  background-color: #9256dc;
   padding: 0.3rem 0.8rem;
   border-radius: 2.5rem;
   font-size: 1.2rem;
   color: white;
+}
+
+.operation__button:hover {
+  background-color: #e62cb42a;
+}
+
+.operation__button:hover .operation__button__logo {
+  color: #9256dc;
 }
 
 .restaurants {
@@ -229,11 +255,11 @@ a {
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 0.5rem #818181;
+  box-shadow: 0.2rem 0.2rem 0.5rem gray;
 }
 .restaurants__card img {
   width: 100%;
-  height: 20rem;
+  height: 16rem;
   border-radius: 1rem 1rem 0 0;
   object-fit: cover;
   object-position: 0 -5rem;
@@ -242,7 +268,7 @@ a {
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  background-color: #99E2D0;
+  background-color: #98e2cf;
   color: black;
   padding: 0.5rem 1.5rem;
   font-size: 1.5rem;
@@ -265,14 +291,18 @@ a {
   /* animation coeur */
 }
 .restaurants__card__text__heart:hover::after {
+  -webkit-transform: scale(1);
   transform: scale(1);
 }
 .restaurants__card__text__heart::after {
   position: absolute;
   left: 0;
+  -webkit-transform: scale(0);
   transform: scale(0);
+  -webkit-transition: transform 1.5s;
   transition: transform 1.5s;
   background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Font awesome 5 Free";
@@ -280,45 +310,44 @@ a {
   content: "";
 }
 
+/* animation loading-spinner page d'accueil */
 .anim-spinner {
-  display: none;
-  /*font-size: 3rem;
+  visibility: hidden;
+  font-size: 3rem;
   position: absolute;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(139, 187, 175, 0.897);
-  z-index: 1;*/
+  background-color: rgba(223, 189, 224, 0.9);
+  z-index: 1;
+}
+.anim-spinner :nth-child(1) {
+  animation: loading-spinner-translateY 2s linear, loading-spinner-scale 1s 2s, loading-spinner-color 2s 2s;
+}
+.anim-spinner :nth-child(2) {
+  animation: loading-spinner-translateY 2s 0.2s linear, loading-spinner-scale 1s 2.2s, loading-spinner-color 2s 2.2s;
+}
+.anim-spinner :nth-child(3) {
+  animation: loading-spinner-translateY 2s 0.4s linear, loading-spinner-scale 1s 2.4s, loading-spinner-color 2s 2.4s;
+}
+.anim-spinner :nth-child(4) {
+  animation: loading-spinner-translateY 2s 0.6s linear, loading-spinner-scale 1s 2.6s, loading-spinner-color 2s 2.6s;
+}
+.anim-spinner :nth-child(5) {
+  animation: loading-spinner-translateY 2s 0.8s linear, loading-spinner-scale 1s 2.8s, loading-spinner-color 2s 2.8s;
+}
+.anim-spinner :nth-child(6) {
+  animation: loading-spinner-translateY 2s 1s linear, loading-spinner-scale 1s 3s, loading-spinner-color 2s 3s;
+}
+.anim-spinner :nth-child(7) {
+  animation: loading-spinner-translateY 2s 1.2s linear, loading-spinner-scale 1s 3.2s, loading-spinner-color 2s 3.2s;
+}
+.anim-spinner :nth-child(8) {
+  animation: loading-spinner-translateY 2s 1.4s linear, loading-spinner-scale 1s 3.4s, loading-spinner-color 2s 3.4s;
 }
 
-/*.anim-spinner{
-    :nth-child(1){
-        animation: loading-spinner-translateY 2s linear, loading-spinner-scale 1s 2s, loading-spinner-color 2s 2s;
-    }
-    :nth-child(2){
-        animation: loading-spinner-translateY 2s 0.2s linear, loading-spinner-scale 1s 2.2s, loading-spinner-color 2s 2.2s;
-    }
-    :nth-child(3){
-        animation: loading-spinner-translateY 2s 0.4s linear, loading-spinner-scale 1s 2.4s, loading-spinner-color 2s 2.4s;
-    }
-    :nth-child(4){
-        animation: loading-spinner-translateY 2s 0.6s linear, loading-spinner-scale 1s 2.6s, loading-spinner-color 2s 2.6s;
-    }
-    :nth-child(5){
-        animation: loading-spinner-translateY 2s 0.8s linear, loading-spinner-scale 1s 2.8s, loading-spinner-color 2s 2.8s;
-    }
-    :nth-child(6){
-        animation: loading-spinner-translateY 2s 1s linear, loading-spinner-scale 1s 3s, loading-spinner-color 2s 3s;
-    }
-    :nth-child(7){
-        animation: loading-spinner-translateY 2s 1.2s linear, loading-spinner-scale 1s 3.2s, loading-spinner-color 2s 3.2s;
-    }
-    :nth-child(8){
-        animation: loading-spinner-translateY 2s 1.4s linear, loading-spinner-scale 1s 3.4s, loading-spinner-color 2s 3.4s;
-    }
-}*/
 /* MEDIA QUERIES */
 @media (min-width: 1025px) {
   .operation__title {
@@ -384,6 +413,7 @@ main {
 }
 .photo-menu img {
   width: 100%;
+  height: 30rem;
   object-fit: cover;
 }
 
@@ -419,40 +449,23 @@ main {
 .menu__line {
   width: 6rem;
   height: 0.5rem;
-  background-color: #99E2D0;
+  background-color: #98e2cf;
   align-self: flex-start;
   margin: 0 0 1rem 1.5rem;
 }
 .menu__plat {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
   opacity: 0;
   display: flex;
   width: 85%;
   background-color: white;
   border-radius: 1.5rem;
-  box-shadow: 0.3rem 0.3rem 0.5rem #818181;
+  box-shadow: 0.3rem 0.3rem 0.5rem gray;
   margin-bottom: 1rem;
   padding: 1rem;
-  /*.anim{
-      background-color: blue;
-      margin: -1rem -1rem -1rem .1rem;
-      border-radius: 0 1.5rem 1.5rem 0;
-      width: 8rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .check{
-      background-color: brown;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: .5rem;
-      border-radius: 2.5rem;
-      i{
-          font-size: 1.5rem;
-      }
-  }*/
+  /* animation check */
 }
 .menu__plat__title {
   overflow: hidden;
@@ -469,56 +482,91 @@ main {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin: 0 3rem 0rem 1rem;
+  margin: 0;
 }
 .menu__plat__price {
   display: flex;
   align-items: flex-end;
+  /* animation affichage menu en cascade */
 }
 .menu__plat:nth-child(3) {
   animation: animation-menu 1s forwards;
 }
 .menu__plat:nth-child(4) {
-  animation: animation-menu 1s forwards;
+  animation: animation-menu 1s 200ms forwards;
   animation-delay: 200ms;
 }
 .menu__plat:nth-child(5) {
-  animation: animation-menu 1s forwards;
+  animation: animation-menu 1s 400ms forwards;
   animation-delay: 400ms;
 }
 .menu__plat:nth-child(8) {
   animation: animation-menu 1s forwards;
 }
 .menu__plat:nth-child(9) {
-  animation: animation-menu 1s forwards;
+  animation: animation-menu 1s 200ms forwards;
   animation-delay: 200ms;
 }
 .menu__plat:nth-child(10) {
-  animation: animation-menu 1s forwards;
+  animation: animation-menu 1s 400ms forwards;
   animation-delay: 400ms;
 }
 .menu__plat:nth-child(13) {
   animation: animation-menu 1s forwards;
 }
 .menu__plat:nth-child(14) {
-  animation: animation-menu 1s forwards;
+  animation: animation-menu 1s 200ms forwards;
   animation-delay: 200ms;
 }
 .menu__plat:nth-child(15) {
-  animation: animation-menu 1s forwards;
+  animation: animation-menu 1s 400ms forwards;
   animation-delay: 400ms;
+}
+.menu__plat:active .menu__plat__anim {
+  animation: test;
+  animation-duration: 1s;
+  background-color: red;
+  margin: -1rem -1rem -1rem 0.1rem;
+  border-radius: 0 1.5rem 1.5rem 0;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__plat__anim {
+  /*background-color: blue;
+  margin: -1rem -1rem -1rem 0rem;
+  border-radius: 0 1.5rem 1.5rem 0;
+  width: 0rem;
+  */
+}
+.menu__plat .check {
+  background-color: #00ff2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 2.5rem;
+}
+.menu__plat .check i {
+  font-size: 1.5rem;
 }
 .menu__command-button {
   margin: 4rem auto 8rem auto;
   display: block;
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(#ff7ad9, #9256dc);
   color: white;
   font-size: 1.5rem;
   padding: 2rem 2.5rem;
   border-radius: 5rem;
   border: none;
-  box-shadow: 0rem 0.3rem 1.5rem #818181;
+  box-shadow: 0rem 0.3rem 1.5rem gray;
   padding: 2rem 5rem;
+}
+.menu__command-button:hover {
+  cursor: pointer;
+  background: linear-gradient(#ff88dd, #9d67e0);
+  box-shadow: 0rem 0.3rem 1.5rem #666666;
 }
 
 /*.test{

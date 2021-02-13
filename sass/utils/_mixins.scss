@@ -9,7 +9,7 @@
         margin: 0 3.5rem 2rem 3.5rem;
         padding: 3rem 4rem;
         border-radius: 2.5rem;
-        box-shadow: 0.3rem 0.3rem 0.5rem$color-shadow;
+        box-shadow: 0.3rem 0.3rem 0.5rem $color-shadow;
         text-decoration: none;
         &__logo{
             position: absolute;
@@ -45,6 +45,14 @@
     box-shadow: 0rem 0.3rem 1.5rem $color-shadow;
 }
 
+@mixin command-button-light{
+    background: linear-gradient(scale-color($color-secondary,$lightness:10%),
+    scale-color($color-primary,$lightness:10%));
+    box-shadow: 0rem 0.3rem 1.5rem $color-shadow-dark;
+}
+
+        /* bouton nouveau sur carte restaurant */
+        
 @mixin new-button{
     background-color: $color-tertiary;
     color: black;
@@ -52,4 +60,5 @@
     font-size: 1.5rem;
     border-radius: 0.1rem;
 }
+
 
