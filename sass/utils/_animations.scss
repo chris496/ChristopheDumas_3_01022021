@@ -13,8 +13,6 @@
 
 /* Animation loading spinner page d'accueil */
 
-
-
 @keyframes loading-spinner-translateY{
     0%{
         transform: translateY(-600px);
@@ -61,6 +59,13 @@
     90%      {color: $color-primary;}
 }
 
+@keyframes hide {
+    0%{visibility: visible;}
+    100% {visibility: hidden;}
+    }
+
+    /* animation check */
+
 @keyframes test{
     0%{
         transform: scaleX(0);
@@ -72,4 +77,10 @@
         transform: scaleX(1);
         transform-origin: 100%;
     }
+}
+
+
+@keyframes check-rotate{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
 }

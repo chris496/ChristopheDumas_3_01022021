@@ -4,9 +4,9 @@
     justify-content: center;
     background-color: rgb(231, 229, 238);
     &__icone{
-        display: flex;
-        justify-self: flex-start;
-        align-items: center;
+        position: absolute;
+        left: 12rem;
+        top: 1.6rem;
     }
 }
 
@@ -33,6 +33,8 @@
     }
 }
 
+/* section fonctionnement */
+
 .operation{
     &__title{
         margin: 4rem 0 3rem 2rem;
@@ -46,6 +48,8 @@
 .operation__button:hover .operation__button__logo{
     color: $color-primary;
 }
+
+/* section restaurants */
 
 .restaurants{
     background-color: $background-light;
@@ -66,7 +70,7 @@
             height: 16rem;
             border-radius: 1rem 1rem 0 0;
             object-fit: cover;
-            object-position: 0 -5rem;
+            object-position: 0 60%;
         }
         &__new{
             position: absolute;
@@ -82,35 +86,19 @@
             p{
                 margin: 0 0 1.5rem 1rem;
             }
-            &__heart{
+            &__heart i{
                 position: absolute;
                 top:4rem;
                 right: 1rem;
                 font-size: 2rem;
-                
-        /* animation coeur */
                 &:hover{
-                    &::after{
-                        -webkit-transform: scale(1);
-                        transform: scale(1);
-                    }  
-                }
-                &::after{
-                    position: absolute;
-                    left: 0;
-                    -webkit-transform: scale(0);
-                    transform: scale(0);
-                    -webkit-transition: transform 1.5s;
-                    transition: transform 1.5s;
-                    background: linear-gradient(#9356DC, #FF79DA);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-family: "Font awesome 5 Free";
-                    font-weight: 900;
-                    content: "\f004";
-                }
-                
+                        background: linear-gradient($color-primary, $color-secondary);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;   
+                        font-weight: bold;
+                        transition: 1s ease-in;
+                        } 
             }
 
             
@@ -122,8 +110,8 @@
 
 .anim-spinner{
     
-    
     visibility: hidden;
+    animation: hide 5.5s;
     font-size: 3rem;
     position: absolute;
     height: 100%;
@@ -131,7 +119,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(223, 189, 224, 0.9);
+    background-color: rgba(166, 255, 248, 0.781);
     z-index: 1;
     
 

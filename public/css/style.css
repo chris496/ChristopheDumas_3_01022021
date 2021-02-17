@@ -1,4 +1,5 @@
-@charset "UTF-8";
+/* bouton fonctionnement */
+/* bouton commande + explorer */
 /* bouton nouveau sur carte restaurant */
 /* animation cascade menu pages restaurants */
 @keyframes animation-menu {
@@ -69,6 +70,15 @@
     color: #9256dc;
   }
 }
+@keyframes hide {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+/* animation check */
 @keyframes test {
   0% {
     transform: scaleX(0);
@@ -77,6 +87,14 @@
   100% {
     transform: scaleX(1);
     transform-origin: 100%;
+  }
+}
+@keyframes check-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 header {
@@ -113,6 +131,7 @@ footer ul {
 }
 footer ul i {
   font-size: 1.3rem;
+  margin-right: 1rem;
 }
 footer ul a {
   color: white;
@@ -166,9 +185,9 @@ a {
   background-color: #e7e5ee;
 }
 .location__icone {
-  display: flex;
-  justify-self: flex-start;
-  align-items: center;
+  position: absolute;
+  left: 12rem;
+  top: 1.6rem;
 }
 
 .presentation {
@@ -201,6 +220,7 @@ a {
   box-shadow: 0rem 0.3rem 1.5rem #666666;
 }
 
+/* section fonctionnement */
 .operation__title {
   margin: 4rem 0 3rem 2rem;
 }
@@ -212,10 +232,11 @@ a {
   justify-content: center;
   align-items: center;
   margin: 0 3.5rem 2rem 3.5rem;
-  padding: 3rem 4rem;
+  padding: 3rem 0rem;
   border-radius: 2.5rem;
   box-shadow: 0.3rem 0.3rem 0.5rem gray;
   text-decoration: none;
+  transition: 0.5s;
 }
 .operation__button__logo {
   position: absolute;
@@ -241,6 +262,7 @@ a {
   color: #9256dc;
 }
 
+/* section restaurants */
 .restaurants {
   background-color: #f6f6f8;
   margin-top: 7rem;
@@ -262,7 +284,7 @@ a {
   height: 16rem;
   border-radius: 1rem 1rem 0 0;
   object-fit: cover;
-  object-position: 0 -5rem;
+  object-position: 0 60%;
 }
 .restaurants__card__new {
   position: absolute;
@@ -283,36 +305,25 @@ a {
 .restaurants__card__text p {
   margin: 0 0 1.5rem 1rem;
 }
-.restaurants__card__text__heart {
+.restaurants__card__text__heart i {
   position: absolute;
   top: 4rem;
   right: 1rem;
   font-size: 2rem;
-  /* animation coeur */
 }
-.restaurants__card__text__heart:hover::after {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-.restaurants__card__text__heart::after {
-  position: absolute;
-  left: 0;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: transform 1.5s;
-  transition: transform 1.5s;
-  background: linear-gradient(#9356DC, #FF79DA);
+.restaurants__card__text__heart i:hover {
+  background: linear-gradient(#9256dc, #ff7ad9);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Font awesome 5 Free";
-  font-weight: 900;
-  content: "";
+  font-weight: bold;
+  transition: 1s ease-in;
 }
 
 /* animation loading-spinner page d'accueil */
 .anim-spinner {
   visibility: hidden;
+  animation: hide 5.5s;
   font-size: 3rem;
   position: absolute;
   height: 100%;
@@ -320,7 +331,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(223, 189, 224, 0.9);
+  background-color: rgba(166, 255, 248, 0.781);
   z-index: 1;
 }
 .anim-spinner :nth-child(1) {
@@ -433,7 +444,12 @@ main {
   margin-right: 3.5rem;
   font-size: 2.5rem;
 }
-.menu__title i {
+.menu__title__heart i:hover {
+  background: linear-gradient(#9256dc, #ff7ad9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*transition: color 8s ease-in;*/
   font-weight: 900;
 }
 .menu__detail {
@@ -444,16 +460,17 @@ main {
 .menu h2 {
   font-weight: 300;
   align-self: flex-start;
-  margin: 2rem 0 0 1.5rem;
+  margin: 2rem 0 0 2.5rem;
 }
 .menu__line {
   width: 6rem;
   height: 0.5rem;
   background-color: #98e2cf;
   align-self: flex-start;
-  margin: 0 0 1rem 1.5rem;
+  margin: 0 0 2rem 2.5rem;
 }
 .menu__plat {
+  overflow: hidden;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -522,34 +539,29 @@ main {
   animation: animation-menu 1s 400ms forwards;
   animation-delay: 400ms;
 }
-.menu__plat:active .menu__plat__anim {
-  animation: test;
-  animation-duration: 1s;
-  background-color: red;
+.menu__plat__anim {
+  display: none;
+}
+.menu__plat:hover .menu__plat__anim {
+  animation: test 1s;
+  background-color: #98e2cf;
   margin: -1rem -1rem -1rem 0.1rem;
-  border-radius: 0 1.5rem 1.5rem 0;
-  width: 8rem;
+  /*border-radius: 0 1.5rem 1.5rem 0;*/
+  width: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.menu__plat__anim {
-  /*background-color: blue;
-  margin: -1rem -1rem -1rem 0rem;
-  border-radius: 0 1.5rem 1.5rem 0;
-  width: 0rem;
-  */
-}
-.menu__plat .check {
-  background-color: #00ff2a;
+.menu__plat:hover .menu__plat__anim__check {
+  animation: check-rotate 1s;
+  background-color: white;
+  color: #98e2cf;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
   border-radius: 2.5rem;
-}
-.menu__plat .check i {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .menu__command-button {
   margin: 4rem auto 8rem auto;
@@ -569,10 +581,17 @@ main {
   box-shadow: 0rem 0.3rem 1.5rem #666666;
 }
 
-/*.test{
-    background-color: brown;
-    width: 1px;
-    border-radius: 0 1.5rem 1.5rem 0;
-}*/
+/* MEDIA QUERIES */
+@media (min-width: 1025px) {
+  .menu__bloc {
+    display: flex;
+  }
+  .menu__detail {
+    width: 100%;
+  }
+  .menu__line {
+    margin-bottom: 3rem;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
