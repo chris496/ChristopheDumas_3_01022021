@@ -15,8 +15,9 @@
         text-decoration: none;
         transition: 0.5s;
         &__logo{
-            position: absolute;
-            left: 4rem;
+           /* position: absolute;
+            left: 4rem;*/
+            margin-right: 2rem;
             font-size: 2rem;
             color: gray;
         }

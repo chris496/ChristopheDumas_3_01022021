@@ -11,6 +11,15 @@
     opacity: 100;
   }
 }
+@-webkit-keyframes animation-menu {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+  100% {
+    opacity: 100;
+  }
+}
 /* Animation loading spinner page d'accueil */
 @keyframes loading-spinner-translateY {
   0% {
@@ -27,6 +36,21 @@
     opacity: 1;
   }
 }
+@-webkit-keyframes loading-spinner-translateY {
+  0% {
+    -webkit-transform: translateY(-600px);
+    opacity: 0;
+  }
+  65% {
+    -webkit-transform: translateY(0px);
+  }
+  75% {
+    -webkit-transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes loading-spinner-scale {
   0% {
     transform: scale(1);
@@ -38,7 +62,50 @@
     transform: scale(1);
   }
 }
+@-webkit-keyframes loading-spinner-scale {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
 @keyframes loading-spinner-color {
+  0% {
+    color: #9256dc;
+  }
+  10% {
+    color: #ff7ad9;
+  }
+  20% {
+    color: #98e2cf;
+  }
+  30% {
+    color: #9256dc;
+  }
+  40% {
+    color: #ff7ad9;
+  }
+  50% {
+    color: #98e2cf;
+  }
+  60% {
+    color: #9256dc;
+  }
+  70% {
+    color: #ff7ad9;
+  }
+  80% {
+    color: #98e2cf;
+  }
+  90% {
+    color: #9256dc;
+  }
+}
+@-webkit-keyframes loading-spinner-color {
   0% {
     color: #9256dc;
   }
@@ -78,8 +145,16 @@
     visibility: hidden;
   }
 }
+@-webkit-keyframes hide {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
 /* animation check */
-@keyframes test {
+@keyframes check {
   0% {
     transform: scaleX(0);
     transform-origin: 100%;
@@ -89,12 +164,46 @@
     transform-origin: 100%;
   }
 }
+@-webkit-keyframes check {
+  0% {
+    -webkit-transform: scaleX(0);
+    -webkit-transform-origin: 100%;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    -webkit-transform-origin: 100%;
+  }
+}
+@keyframes price {
+  0% {
+    transform: translate(51px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@-webkit-keyframes price {
+  0% {
+    -webkit-transform: translate(51px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+  }
+}
 @keyframes check-rotate {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes check-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
   }
 }
 header {
@@ -179,15 +288,14 @@ a {
 }
 
 .location {
-  position: relative;
   display: flex;
   justify-content: center;
   background-color: #e7e5ee;
 }
 .location__icone {
-  position: absolute;
-  left: 12rem;
-  top: 1.6rem;
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
 }
 
 .presentation {
@@ -239,8 +347,9 @@ a {
   transition: 0.5s;
 }
 .operation__button__logo {
-  position: absolute;
-  left: 4rem;
+  /* position: absolute;
+   left: 4rem;*/
+  margin-right: 2rem;
   font-size: 2rem;
   color: gray;
 }
@@ -314,16 +423,17 @@ a {
 .restaurants__card__text__heart i:hover {
   background: linear-gradient(#9256dc, #ff7ad9);
   -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
   font-weight: bold;
   transition: 1s ease-in;
+  -webkit-transition: 1s ease-in;
 }
 
 /* animation loading-spinner page d'accueil */
 .anim-spinner {
   visibility: hidden;
-  animation: hide 5.5s;
+  -webkit-animation: hide 2.7s;
+  animation: hide 2.7s;
   font-size: 3rem;
   position: absolute;
   height: 100%;
@@ -335,28 +445,36 @@ a {
   z-index: 1;
 }
 .anim-spinner :nth-child(1) {
-  animation: loading-spinner-translateY 2s linear, loading-spinner-scale 1s 2s, loading-spinner-color 2s 2s;
+  -webkit-animation: loading-spinner-translateY 1s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1s, loading-spinner-color 1s 1s;
+  animation: loading-spinner-translateY 1s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1s, loading-spinner-color 1s 1s;
 }
 .anim-spinner :nth-child(2) {
-  animation: loading-spinner-translateY 2s 0.2s linear, loading-spinner-scale 1s 2.2s, loading-spinner-color 2s 2.2s;
+  -webkit-animation: loading-spinner-translateY 1s 0.1s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.1s, loading-spinner-color 1s 1.1s;
+  animation: loading-spinner-translateY 1s 0.1s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.1s, loading-spinner-color 1s 1.1s;
 }
 .anim-spinner :nth-child(3) {
-  animation: loading-spinner-translateY 2s 0.4s linear, loading-spinner-scale 1s 2.4s, loading-spinner-color 2s 2.4s;
+  -webkit-animation: loading-spinner-translateY 1s 0.2s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.2s, loading-spinner-color 1s 1.2s;
+  animation: loading-spinner-translateY 1s 0.2s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.2s, loading-spinner-color 1s 1.2s;
 }
 .anim-spinner :nth-child(4) {
-  animation: loading-spinner-translateY 2s 0.6s linear, loading-spinner-scale 1s 2.6s, loading-spinner-color 2s 2.6s;
+  -webkit-animation: loading-spinner-translateY 1s 0.3s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.3s, loading-spinner-color 1s 1.3s;
+  animation: loading-spinner-translateY 1s 0.3s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.3s, loading-spinner-color 1s 1.3s;
 }
 .anim-spinner :nth-child(5) {
-  animation: loading-spinner-translateY 2s 0.8s linear, loading-spinner-scale 1s 2.8s, loading-spinner-color 2s 2.8s;
+  -webkit-animation: loading-spinner-translateY 1s 0.4s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.4s, loading-spinner-color 1s 1.4s;
+  animation: loading-spinner-translateY 1s 0.4s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.4s, loading-spinner-color 1s 1.4s;
 }
 .anim-spinner :nth-child(6) {
-  animation: loading-spinner-translateY 2s 1s linear, loading-spinner-scale 1s 3s, loading-spinner-color 2s 3s;
+  -webkit-animation: loading-spinner-translateY 1s 0.5s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.5s, loading-spinner-color 1s 1.5s;
+  animation: loading-spinner-translateY 1s 0.5s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.5s, loading-spinner-color 1s 1.5s;
 }
 .anim-spinner :nth-child(7) {
-  animation: loading-spinner-translateY 2s 1.2s linear, loading-spinner-scale 1s 3.2s, loading-spinner-color 2s 3.2s;
+  -webkit-animation: loading-spinner-translateY 1s 0.6s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.6s, loading-spinner-color 1s 1.6s;
+  animation: loading-spinner-translateY 1s 0.6s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.6s, loading-spinner-color 1s 1.6s;
 }
 .anim-spinner :nth-child(8) {
-  animation: loading-spinner-translateY 2s 1.4s linear, loading-spinner-scale 1s 3.4s, loading-spinner-color 2s 3.4s;
+  -webkit-animation: loading-spinner-translateY 1s 0.7s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.7s, loading-spinner-color 1s 1.7s;
+  animation: loading-spinner-translateY 1s 0.7s cubic-bezier(0.68, -0.55, 0.27, 1), loading-spinner-scale 1s 1.7s, loading-spinner-color 1s 1.7s;
 }
 
 /* MEDIA QUERIES */
@@ -447,10 +565,11 @@ main {
 .menu__title__heart i:hover {
   background: linear-gradient(#9256dc, #ff7ad9);
   -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /*transition: color 8s ease-in;*/
-  font-weight: 900;
+  color: transparent;
+  font-weight: bold;
+  transition: 1s ease-in;
+  -webkit-transition: 1s ease-in;
+  cursor: pointer;
 }
 .menu__detail {
   display: flex;
@@ -482,11 +601,13 @@ main {
   box-shadow: 0.3rem 0.3rem 0.5rem gray;
   margin-bottom: 1rem;
   padding: 1rem;
+  /* animation affichage menu en cascade */
   /* animation check */
 }
 .menu__plat__title {
   overflow: hidden;
   white-space: nowrap;
+  flex-grow: 2;
 }
 .menu__plat h3 {
   overflow: hidden;
@@ -504,56 +625,71 @@ main {
 .menu__plat__price {
   display: flex;
   align-items: flex-end;
-  /* animation affichage menu en cascade */
+  margin-right: 1.5rem;
+}
+.menu__plat:focus .menu__plat__price {
+  -webkit-animation: price 0.5s;
+  animation: price 0.5s;
 }
 .menu__plat:nth-child(3) {
+  -webkit-animation: animation-menu 1s forwards;
   animation: animation-menu 1s forwards;
 }
 .menu__plat:nth-child(4) {
+  -webkit-animation: animation-menu 1s 200ms forwards;
   animation: animation-menu 1s 200ms forwards;
-  animation-delay: 200ms;
 }
 .menu__plat:nth-child(5) {
+  -webkit-animation: animation-menu 1s 400ms forwards;
   animation: animation-menu 1s 400ms forwards;
-  animation-delay: 400ms;
+}
+.menu__plat:nth-child(6) {
+  -webkit-animation: animation-menu 1s 600ms forwards;
+  animation: animation-menu 1s 600ms forwards;
 }
 .menu__plat:nth-child(8) {
+  -webkit-animation: animation-menu 1s forwards;
   animation: animation-menu 1s forwards;
 }
 .menu__plat:nth-child(9) {
+  -webkit-animation: animation-menu 1s 200ms forwards;
   animation: animation-menu 1s 200ms forwards;
-  animation-delay: 200ms;
 }
 .menu__plat:nth-child(10) {
+  -webkit-animation: animation-menu 1s 400ms forwards;
   animation: animation-menu 1s 400ms forwards;
-  animation-delay: 400ms;
 }
 .menu__plat:nth-child(13) {
+  -webkit-animation: animation-menu 1s forwards;
   animation: animation-menu 1s forwards;
 }
 .menu__plat:nth-child(14) {
+  -webkit-animation: animation-menu 1s 200ms forwards;
   animation: animation-menu 1s 200ms forwards;
-  animation-delay: 200ms;
 }
 .menu__plat:nth-child(15) {
+  -webkit-animation: animation-menu 1s 400ms forwards;
   animation: animation-menu 1s 400ms forwards;
-  animation-delay: 400ms;
 }
 .menu__plat__anim {
-  display: none;
+  /*display: none;*/
+  visibility: hidden;
+  transition: animation 2s;
 }
-.menu__plat:hover .menu__plat__anim {
-  animation: test 1s;
+.menu__plat:focus .menu__plat__anim {
+  -webkit-animation: check 0.5s;
+  animation: check 0.5s;
   background-color: #98e2cf;
   margin: -1rem -1rem -1rem 0.1rem;
-  /*border-radius: 0 1.5rem 1.5rem 0;*/
   width: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: visible;
 }
-.menu__plat:hover .menu__plat__anim__check {
-  animation: check-rotate 1s;
+.menu__plat:focus .menu__plat__anim__check {
+  -webkit-animation: check-rotate 0.5s;
+  animation: check-rotate 0.5s;
   background-color: white;
   color: #98e2cf;
   display: flex;

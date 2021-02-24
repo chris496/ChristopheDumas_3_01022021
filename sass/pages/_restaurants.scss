@@ -27,11 +27,12 @@ main{
             font-size: 2.5rem;
             i:hover{
                 background: linear-gradient($color-primary, $color-secondary);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;   
-                /*transition: color 8s ease-in;*/
-                font-weight: 900;
+                    -webkit-background-clip: text;
+                    color: transparent;  
+                    font-weight: bold;
+                    transition: 1s ease-in;
+                    -webkit-transition: 1s ease-in;
+                    cursor: pointer;
                 }
         }
     
@@ -70,6 +71,7 @@ main{
         &__title{
             overflow: hidden;
             white-space: nowrap; 
+            flex-grow: 2;
         }
         h3{
             overflow: hidden;
@@ -87,64 +89,89 @@ main{
         &__price{
             display: flex;
             align-items: flex-end; 
+            margin-right: 1.5rem;
+        }
+        &:focus &__price{
+            -webkit-animation: price .5s;
+            animation: price .5s;
+        }
             
 
             /* animation affichage menu en cascade */
-        }
+        
         &:nth-child(3){
+            -webkit-animation: animation-menu 1s forwards;
             animation: animation-menu 1s forwards;
         }
         &:nth-child(4){
+            -webkit-animation: animation-menu 1s 200ms forwards;
             animation: animation-menu 1s 200ms forwards;
-            animation-delay: 200ms;
+            
         }
         &:nth-child(5){
+            -webkit-animation: animation-menu 1s 400ms forwards;
             animation: animation-menu 1s 400ms forwards;
-            animation-delay: 400ms;
+            
+        }
+        &:nth-child(6){
+            -webkit-animation: animation-menu 1s 600ms forwards;
+            animation: animation-menu 1s 600ms forwards;
+            
         }
         &:nth-child(8){
+            -webkit-animation: animation-menu 1s forwards;
             animation: animation-menu 1s forwards;
         }
         &:nth-child(9){
+            -webkit-animation: animation-menu 1s 200ms forwards;
             animation: animation-menu 1s 200ms forwards;
-            animation-delay: 200ms;
+            
         }
         &:nth-child(10){
+            -webkit-animation: animation-menu 1s 400ms forwards;
             animation: animation-menu 1s 400ms forwards;
-            animation-delay: 400ms;
+            
         }
         &:nth-child(13){
+            -webkit-animation: animation-menu 1s forwards;
             animation: animation-menu 1s forwards;
         }
         &:nth-child(14){
+            -webkit-animation: animation-menu 1s 200ms forwards;
             animation: animation-menu 1s 200ms forwards;
-            animation-delay: 200ms;
+            
         }
         &:nth-child(15){
+            -webkit-animation: animation-menu 1s 400ms forwards;
             animation: animation-menu 1s 400ms forwards;
-            animation-delay: 400ms;
+            
         }
 
             /* animation check */
 
         &__anim{
-            display: none;
+            /*display: none;*/
+            visibility: hidden;
+            transition: animation 2s;
+            
         }
         
-        &:hover &__anim{
-            animation: test 1s;
+        &:focus &__anim{
+            -webkit-animation: check .5s;
+            animation: check .5s;
             background-color: $color-tertiary;
             margin: -1rem -1rem -1rem .1rem;
-            /*border-radius: 0 1.5rem 1.5rem 0;*/
             width: 6rem;
             display: flex;
             justify-content: center;
             align-items: center;
+            visibility: visible;
             
             
         }
-        &:hover &__anim__check{
-            animation: check-rotate 1s;
+        &:focus &__anim__check{
+            -webkit-animation: check-rotate .5s;
+            animation: check-rotate .5s;
             background-color: white;
             color: $color-tertiary;
             display: flex;

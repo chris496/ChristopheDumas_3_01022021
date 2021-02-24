@@ -10,6 +10,16 @@
     }
 }
 
+@-webkit-keyframes animation-menu{
+    0%{
+        opacity:0;
+        -webkit-transform: translateY(20px);
+    }
+    100%{
+        opacity: 100;
+    }
+}
+
 
 /* Animation loading spinner page d'accueil */
 
@@ -32,6 +42,25 @@
     }
 }
 
+@-webkit-keyframes loading-spinner-translateY{
+    0%{
+        -webkit-transform: translateY(-600px);
+        opacity: 0;
+
+    }
+
+    65%{
+        -webkit-transform: translateY(0px);
+    }
+
+    75%{
+        -webkit-transform: translateY(-60px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 @keyframes loading-spinner-scale{
     0%{
         transform: scale(1);
@@ -46,7 +75,34 @@
     }
 }
 
+@-webkit-keyframes loading-spinner-scale{
+    0%{
+        -webkit-transform: scale(1);
+    }
+
+    50%{
+        -webkit-transform: scale(1.5);
+    }
+
+    100%{
+        -webkit-transform: scale(1);
+    }
+}
+
 @keyframes loading-spinner-color {
+    0%       {color: $color-primary;}
+    10%      {color: $color-secondary;}
+    20%      {color: $color-tertiary;}
+    30%      {color: $color-primary;}
+    40%      {color: $color-secondary;}
+    50%      {color: $color-tertiary;}
+    60%      {color: $color-primary;}
+    70%      {color: $color-secondary;}
+    80%      {color: $color-tertiary;}
+    90%      {color: $color-primary;}
+}
+
+@-webkit-keyframes loading-spinner-color {
     0%       {color: $color-primary;}
     10%      {color: $color-secondary;}
     20%      {color: $color-tertiary;}
@@ -64,12 +120,17 @@
     100% {visibility: hidden;}
     }
 
+@-webkit-keyframes hide {
+    0%{visibility: visible;}
+    100% {visibility: hidden;}
+    }
+
     /* animation check */
 
-@keyframes test{
+@keyframes check{
     0%{
         transform: scaleX(0);
-        transform-origin: 100%;   
+        transform-origin: 100%;  
     }
    
 
@@ -79,8 +140,56 @@
     }
 }
 
+@-webkit-keyframes check{
+    0%{
+        -webkit-transform: scaleX(0);
+        -webkit-transform-origin: 100%;   
+    }
+   
+
+    100%{
+        -webkit-transform: scaleX(1);
+        -webkit-transform-origin: 100%;
+    }
+}
+
+@keyframes price{
+    0%{
+        transform: translate(51px); 
+    }
+   
+
+    100%{
+        transform: translate(0); 
+    }
+}
+
+@-webkit-keyframes price{
+    0%{
+        -webkit-transform: translate(51px);
+    }
+   
+
+    100%{
+        -webkit-transform: translate(0);
+    }
+}
+
 
 @keyframes check-rotate{
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes check-rotate{
+    0%{
+        -webkit-transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+    }
 }
