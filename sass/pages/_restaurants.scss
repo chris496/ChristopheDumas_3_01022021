@@ -56,6 +56,7 @@ main{
     }
 
     &__plat{ 
+        
         overflow: hidden;
         cursor: pointer;
         display: flex;
@@ -87,16 +88,12 @@ main{
             margin: 0;
         }
         &__price{
+            font-weight: bold;
             display: flex;
             align-items: flex-end; 
-            margin-right: 1.5rem;
+            margin-right: 1.6rem;
         }
-        &:focus &__price{
-            -webkit-animation: price .5s;
-            animation: price .5s;
-        }
-            
-
+        
             /* animation affichage menu en cascade */
         
         &:nth-child(3){
@@ -150,28 +147,18 @@ main{
             /* animation check */
 
         &__anim{
-            /*display: none;*/
-            visibility: hidden;
-            transition: animation 2s;
-            
-        }
-        
-        &:focus &__anim{
-            -webkit-animation: check .5s;
-            animation: check .5s;
+            -webkit-transition: width 0.2s linear;
+            transition: width 0.2s linear;
+            width: 0;
             background-color: $color-tertiary;
-            margin: -1rem -1rem -1rem .1rem;
-            width: 6rem;
+            margin: -1rem -1.6rem -1rem .1rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            visibility: visible;
-            
             
         }
-        &:focus &__anim__check{
-            -webkit-animation: check-rotate .5s;
-            animation: check-rotate .5s;
+
+        &__anim__check{
             background-color: white;
             color: $color-tertiary;
             display: flex;
@@ -180,8 +167,21 @@ main{
             padding: .5rem;
             border-radius: 2.5rem;
             font-size: 1.2rem;
-            
-            
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+            -webkit-transform: rotate(0deg);
+            -webkit-transition: transform 0.3s;
+        }
+        
+        &:focus &__anim{
+            background-color: $color-tertiary;
+            margin: -1rem -1rem -1rem .1rem;
+            width: 6rem;
+        }
+
+        &:focus &__anim__check{
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
         }
 
         
@@ -193,7 +193,6 @@ main{
         padding: 2rem 5rem;
         
         &:hover{
-            
             cursor: pointer;
             @include command-button-light;
         }
@@ -215,7 +214,6 @@ main{
     &__line{
         margin-bottom: 3rem;
     }
-    
 }
 }
 

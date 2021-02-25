@@ -25,7 +25,7 @@
     }
     &__button{
         @include command-button;
-        margin-bottom: 3rem;
+        margin-bottom: 6rem;
         &:hover{
             
             cursor: pointer;
@@ -55,6 +55,7 @@
 .restaurants{
     background-color: $background-light;
     margin-top: 7rem;
+    padding-bottom: 5rem;
     &__title{
         padding: 4rem 0 0 2rem;
     }
@@ -169,17 +170,9 @@
     a{
         width: 20%;
     }
-    
     &__bloc{
         display: flex;
         justify-content: space-around;
-    }
-    &__button{
-        margin: 0;
-        &__logo{
-            left: 3rem;
-    }
-    
     }
 }
 
@@ -227,5 +220,4 @@
         flex-wrap: wrap;
         }
     }
-    
     }
